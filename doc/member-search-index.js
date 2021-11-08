@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"it.unibo.oop.lab.anonymous1","c":"TestAnonymousComparator","l":"checkUserOrder(List<User>, List<User>)","u":"checkUserOrder(java.util.List,java.util.List)"},{"p":"it.unibo.oop.lab.anonymous1","c":"TestAnonymousComparator","l":"main(String...)","u":"main(java.lang.String...)"}];updateSearchResults();
