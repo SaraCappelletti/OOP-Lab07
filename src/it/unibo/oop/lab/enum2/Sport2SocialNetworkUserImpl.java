@@ -104,6 +104,17 @@ public class Sport2SocialNetworkUserImpl<U extends User> extends SocialNetworkUs
      * 
      * @return the set of individual sport this user practices/follows
      */
+    
+    public Set<Sport> getIndividualSports() { 
+    	Set<Sport> individuals = new HashSet<Sport>(); 
+    	for(Sport elem : this.sports) {
+    		if(elem.isIndividualSport()) {
+    			individuals.add(elem);
+    		}
+    	}
+    	return individuals;
+    }
+    
     /*
      * public Set<Sport> getIndividualSports() { return null; }
      * 
@@ -118,4 +129,14 @@ public class Sport2SocialNetworkUserImpl<U extends User> extends SocialNetworkUs
     /*
      * public Set<Sport> getSportPracticedInPlace(Place p) { return null; }
      */
+    
+    public Set<Sport> getSportPracticedInPlace(final Place p) {
+    	Set<Sport> inPlace = new HashSet<Sport>(); 
+    	for(Sport elem : this.sports) {
+    		if(elem.getPlace().equals(p)) {
+    			inPlace.add(elem);
+    		}
+    	}
+    	return inPlace;
+    }
 }
