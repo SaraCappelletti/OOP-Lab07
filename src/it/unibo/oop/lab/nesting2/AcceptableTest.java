@@ -9,6 +9,7 @@ import java.util.List;
 import org.junit.Test;
 
 import it.unibo.oop.lab.nesting2.Acceptor.ElementNotAcceptedException;
+import it.unibo.oop.lab.nesting2.Acceptor.EndNotAcceptedException;
 
 /**
  * This is the JUnit test for {@link it.unibo.oop.lab.nesting2.Acceptable}
@@ -19,9 +20,11 @@ public class AcceptableTest {
 
     /**
      * This is a first acceptance test.
+     * @throws ElementNotAcceptedException 
+     * @throws EndNotAcceptedException 
      */
     @Test
-    public void test1() {
+    public void test1() throws ElementNotAcceptedException, EndNotAcceptedException {
         /*
          * Correct acceptance of [10, 20, 30, 40]
          */

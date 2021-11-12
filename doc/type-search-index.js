@@ -1,1 +1,1 @@
-typeSearchIndex = [{"l":"All Classes","u":"allclasses-index.html"},{"p":"it.unibo.oop.lab.anonymous1","l":"TestAnonymousComparator"}];updateSearchResults();
+typeSearchIndex = [{"l":"All Classes","u":"allclasses-index.html"},{"p":"it.unibo.oop.lab.nesting2","l":"OneListAcceptable"}];updateSearchResults();

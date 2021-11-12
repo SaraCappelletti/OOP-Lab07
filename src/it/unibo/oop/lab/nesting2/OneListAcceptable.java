@@ -2,8 +2,6 @@ package it.unibo.oop.lab.nesting2;
 
 import java.util.List;
 
-import javax.swing.text.ElementIterator;
-
 public class OneListAcceptable<T> implements Acceptable<T> {
 	
 	private final List<T> list;
