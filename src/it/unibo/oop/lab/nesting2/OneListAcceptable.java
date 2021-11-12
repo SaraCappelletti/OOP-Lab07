@@ -2,16 +2,51 @@ package it.unibo.oop.lab.nesting2;
 
 import java.util.List;
 
-public class OneListAcceptable<T> implements Acceptable<T> {
+import javax.swing.text.ElementIterator;
 
-	public OneListAcceptable(List<T>) {
-		// TODO Auto-generated constructor stub
+public class OneListAcceptable<T> implements Acceptable<T> {
+	
+	private final List<T> list;
+
+	public OneListAcceptable(final List<T> list) {
+		this.list = list;
 	}
 
 	@Override
 	public Acceptor<T> acceptor() {
-		this.acceptor();
-		return null;
+		return new OneListAcceptor<T>(list);
+	}
+	
+	private static class OneListAcceptor<T> implements Acceptor<T> {
+		
+		private final List <T> list;
+		private int count;
+
+		public OneListAcceptor(final List<T> list) {
+			super();
+			this.list = list;
+			this.count = 0;
+		}
+
+		@Override
+		public void accept(T newElement) throws ElementNotAcceptedException {
+			if (list.size() == count) {
+				throw new ElementNotAcceptedException(newElement);
+			}
+			if (list.get(count).equals(newElement)) {
+				count++;
+			} else {
+				throw new ElementNotAcceptedException(newElement);
+			}
+		}
+
+		@Override
+		public void end() throws EndNotAcceptedException {
+			if (list.size() != count) {
+				throw new EndNotAcceptedException();
+			}
+		}
+		
 	}
 
 }
